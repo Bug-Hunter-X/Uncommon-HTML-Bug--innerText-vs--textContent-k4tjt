@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv">
+    This is some text inside a div.
+  </div>
+  <script>
+    // Incorrect attempt to get the text content of a div using innerText
+    let divText = document.getElementById("myDiv").innerText;
+    console.log(divText); //May return unexpected whitespace or incorrect text if nested elements are present
+    // Correct way to get the text content of a div using textContent
+    let divTextCorrect = document.getElementById("myDiv").textContent;
+    console.log(divTextCorrect); // Returns the correct text content
+  </script>
+</body>
+</html>
